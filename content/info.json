@@ -1,0 +1,144 @@
+{
+  "lead":"Sorgfältiges Design ohne Schnick&shy;schnack, aber mit Charakter – ich liebe es, digitale Produkte zu kreieren, die ansprechen und gleichzeitig Sinn ergeben.",
+  "introduction":"<p>Von meinen 37 Jahren habe ich die letzten 13 der digi&shy;talen Kommuni&shy;kation gewidmet. Weil man das nirgends besser kann, als im Zentrum der Schweizer Digital&shy;szene, habe ich mich 2014 von Fribourg nach Zürich auf&shy;gemacht – und bin geblieben.</p><p>Geblieben ist, nebst meinem Accent, auch mein pragma&shy;tischer Blick fürs Wesen&shy;tliche: Ich achte genauso auf Details, wie auf das Gesamt&shy;bild. Ich liebe es, die neuesten Trends zu beobachten, aber folge ihnen nicht blind.</p><p>Diese Sicht&shy;weise bringe ich gerne bereits in der Recherche- und Konzept&shy;phase ein – um dazu beizu&shy;tragen, dass Lösungen nicht nur elegant, sondern auch funktional werden.</p><p>Damit es dabei nicht bei einer leeren Floskel bleibt, begleite ich Projekte auch über den Design&shy;prozess hinaus: Dank soliden Front-End-Kenntnissen arbeite ich eng mit Entwicklern zusammen, um optimale Ergeb&shy;nisse zu erzielen.</p>",
+  "gifTitle": "David Darx",
+  "gifPath": "https://files.daviddarx.com/works/static/info/gif/",
+  "gifImages": [
+    "00.jpg",
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg",
+    "08.jpg",
+    "09.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg",
+    "15.jpg",
+    "16.jpg",
+    "17.jpg",
+    "18.jpg",
+    "19.jpg",
+    "20.jpg",
+    "21.jpg",
+    "22.jpg"
+  ],
+  "experience": [
+    {
+      "title": "Digital Art Director",
+      "agency": "Eyekon",
+      "additional": "Prägung digitaler Projekte am Schnittpunkt von UX Design, Kommunikation und visueller Gestaltung, hauptsächlich für den öffentlichen Sektor und KMUs.",
+      "date1": "2016",
+      "date2": "Heute",
+      "place": "Zürich"
+    },
+    {
+      "title": "Digital Designer",
+      "agency": "Unic",
+      "additional": "Gestaltung umfassender digitaler Plattformen für Grosskunden und Koordination in grossen Teams.",
+      "date1": "2014",
+      "date2": "2016",
+      "place": "Zürich"
+    },
+    {
+      "title": "Web Designer",
+      "agency": "Custom Design",
+      "additional": "Verantwortung für die Webabteilung und Projektbetreuung von der Konzeption, über die Gestaltung bis zum Projektmanagement.",
+      "date1": "2012",
+      "date2": "2014",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Web Designer",
+      "agency": "Freelance",
+      "additional": "Freiberufliche Anstellung bei verschiednen Webagenturen.",
+      "date1": "2011",
+      "date2": "2012",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Interactive Designer",
+      "additional": "Verantwortung für die Webabteilung in einem multidisziplinären Studio und Projektbetreuung von der Konzeption, über die Gestaltung bis zum Projektmanagement.",
+      "agency": "Horsform",
+      "date1": "2007",
+      "date2": "2012",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Multimedia Designer",
+      "agency": "Custom Design",
+      "additional": "Praktikum – Konzeption, Gestaltung und Entwicklung der unternehmenseigenen Website.",
+      "date1": "2007",
+      "date2": "2007",
+      "place": "Fribourg"
+    }
+  ],
+  "expertise": [
+    {
+      "title": "Konzeption & Gestaltung",
+      "desc": "Konzept & Wireframes, IA, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management.<br><br>Figma, Sketch, Invision, Zeplin, Photoshop, Illustrator, InDesign, After Effects, Final Cut, Keynote."
+    },
+    {
+      "title": "Entwicklung",
+      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Frameworks & Tools: Github, Tower, NPM, Parcel.js, Vue.js, Sass, Jquery, GSAP, PixiJS, Three.js, und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
+    },
+    {
+      "title": "Sprachen",
+      "desc": "Französisch (Muttersprache), Deutsch (Verhandlungssicher), Englisch (Verhandlungssicher), Spanish (Grundkenntnisse)."
+    }
+  ],
+  "education": [
+    {
+      "title": "Interactive Media Design",
+      "school": "Eikon, Berufsfachschule für Gestaltung",
+      "additional": "Spezialausbildung Interaction Design<br><br>Während meiner Multimedia-Ausbildung (Kommunikation, Print, Video, Motion & 3D, Interaction) merkte ich schnell, dass mein Herz für die Gestaltung von Interaktionen schlug.",
+      "date1": "2004",
+      "date2": "2007",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Matura",
+      "school": "Kollegium Heilig Kreuz",
+      "additional": "Spezialausbildung Spanisch & Visuelle Gestaltung<br><br>Meine Leidenschaft fürs Visuelle entflammte hinter Schulbänken und äusserte sich in Form von Graffitis.",
+      "date1": "2000",
+      "date2": "2004",
+      "place": "Fribourg"
+    }
+  ],
+  "clients": [
+    "HfH, Interkantonale Hochschule für Heilpädagogik",
+    "UZH – Univesität Zürich",
+    "Universtität Luzern",
+    "ETH Zürich",
+    "MAZ, Die Schweizer Journalistenschule",
+    "Axa Winterthur Versicherung",
+    "Mobiliär Versicherung",
+    "ASO Auslandschweizer-Organisation",
+    "SwissAid",
+    "Antidoping Schweiz",
+    "Swisscom",
+    "Coop",
+    "Interdiscount",
+    "Microspot.ch",
+    "Mammut Sport",
+    "UEFA",
+    "St.Morritz, Engadin Mountains",
+    "Jungfrau Region",
+    "Flughafen Zürich",
+    "Olma Messen St.Gallen",
+    "Swisslos.ch",
+    "MediData",
+    "Stadt Winterthur",
+    "EPFL Lausanne",
+    "Montreux Jazz Festival",
+    "Images Festival Vevey",
+    "GastroFribourg",
+    "L//P",
+    "u.v.m."
+  ]
+}
