@@ -8,15 +8,24 @@
     }"
   >
     <h1 class="visually-hidden">Boilerplate Vue.js</h1>
+
     <logo></logo>
+
     <custom-navigation ref="nav"></custom-navigation>
-    <router-view
-      :key="$route.fullPath"
-      ref="view"
-    >
-    </router-view>
-    <custom-footer></custom-footer>
+
+    <div class="content">
+      <router-view
+        :key="$route.fullPath"
+        ref="view"
+      >
+      </router-view>
+
+      <custom-footer></custom-footer>
+    </div>
+
+
     <custom-transition></custom-transition>
+
     <browser-warning></browser-warning>
   </div>
 </template>

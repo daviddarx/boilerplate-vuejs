@@ -1,7 +1,6 @@
 
 <template>
   <div
-    class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     Page 01

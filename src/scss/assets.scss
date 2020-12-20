@@ -1,7 +1,5 @@
 //fonts
 
-
-
 // utilities
 $breakpoints: (
   'desktop-xl': 'min-width: 1921px',
@@ -50,8 +48,6 @@ $breakpoints: (
   -webkit-hyphens: auto;
 }
 
-
-
 // helper classes
 .visually-hidden {
   position: absolute !important;
@@ -69,25 +65,20 @@ $breakpoints: (
   height: auto;
 }
 
-
-
 // styles
 :root {
   //colors
   --c-text: black;
 
-
   //sizes
   --s-text: 1rem;
   --s-line-height: 1.5;
-  --s-gutter: 8vw;
-
+  --s-gutter: 2vw;
 
   //eases https://matthewlein.com/tools/ceaser
   --e-in: cubic-bezier(0.895, 0.03, 0.685, 0.22); // quart
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1); // quart
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1); // quart
-
 
   @include viewport('desktop-xl') {
     --s-text: 4rem;

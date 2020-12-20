@@ -38,6 +38,40 @@ body {
   font-size: var(--s-text);
   line-height: var(--s-line-height);
   color: var(--c-text);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--c-text);
+  text-decoration: underline;
+}
+
+.logo {
+  position: fixed;
+  top: var(--s-gutter);
+  left: var(--s-gutter);
+}
+
+.navigation {
+  position: fixed;
+  top: 50vh;
+  left: var(--s-gutter);
+
+  &__link {
+    display: block;
+
+    &.is-current {
+      background-color: turquoise;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  width: 50vw;
+  left: 50vw;
+  padding: var(--s-gutter);
+  box-sizing: border-box;
 }
 
 .transition {

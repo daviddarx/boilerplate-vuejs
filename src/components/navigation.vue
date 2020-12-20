@@ -20,6 +20,12 @@
       >
         Page 02
       </router-link>
+      <router-link
+        class="navigation__link"
+        to="/page-03"
+      >
+        Page 03
+      </router-link>
     </div>
   </nav>
 </template>
