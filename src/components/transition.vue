@@ -3,8 +3,6 @@
   <div
     class="transition"
   >
-    transition
-
     <transition
       name="transition-in"
       v-on:after-enter="aferEnterIn"
