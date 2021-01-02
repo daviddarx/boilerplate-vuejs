@@ -1,4 +1,3 @@
-
 @import 'reset-css/reset.css';
 @import './assets.scss';
 
@@ -34,11 +33,31 @@ body {
   min-height: 100%;
 }
 
+html {
+  @include fontRunText;
+
+  font-size: 1vw;
+}
+
 body {
   font-size: var(--s-text);
   line-height: var(--s-line-height);
   color: var(--c-text);
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include fontTitle();
+}
+
+b,
+strong {
+  @include fontTitle();
 }
 
 a {
