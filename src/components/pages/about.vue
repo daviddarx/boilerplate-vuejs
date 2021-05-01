@@ -3,16 +3,54 @@
   <div
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    About
+    <h2>
+      {{about.title}}
+    </h2>
+
+    <div
+        v-for="item in about.content"
+        v-bind:key="item.title"
+      >
+        <h3>
+          {{item.title}}
+        </h3>
+        <div
+          v-if="item.textcontent"
+          v-html="getHTMLfromMD(item.textcontent)"
+        >
+        </div>
+        <dl
+          v-if="item.listcontent"
+        >
+          <template
+            v-for="list in item.listcontent"
+          >
+            <dt
+              v-bind:key="list.definitionlist.title"
+              v-html="list.definitionlist.title"
+            >
+            </dt>
+            <dd
+              v-bind:key="list.definitionlist.desc"
+              v-html="getHTMLfromMD(list.definitionlist.desc)"
+            >
+            </dd>
+          </template>
+        </dl>
+      </div>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import * as about from '../../../content/about/about.json';
+  import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
 
   export default Vue.extend({
+    mixins: [getHTMLfromMDMixin],
     data() {
       return {
+        about: about,
         isDisplayed : false,
       }
     },

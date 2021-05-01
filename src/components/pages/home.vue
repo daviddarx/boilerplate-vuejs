@@ -4,16 +4,27 @@
     class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    Home
+    <h2>
+      {{home.title}}
+    </h2>
+
+    <div
+      v-html="getHTMLfromMD(home.content)"
+    >
+    </div>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import * as home from '../../../content/home/home.json';
+  import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
 
   export default Vue.extend({
+    mixins: [getHTMLfromMDMixin],
     data() {
       return {
+        home: home,
         isDisplayed : false,
       }
     },
