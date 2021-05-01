@@ -26,12 +26,12 @@
             v-for="list in item.listcontent"
           >
             <dt
-              v-bind:key="list.definitionlist.title"
+              v-bind:key="list.definitionlist.title+'titel'"
               v-html="list.definitionlist.title"
             >
             </dt>
             <dd
-              v-bind:key="list.definitionlist.desc"
+              v-bind:key="list.definitionlist.title+'desc'"
               v-html="getHTMLfromMD(list.definitionlist.desc)"
             >
             </dd>
