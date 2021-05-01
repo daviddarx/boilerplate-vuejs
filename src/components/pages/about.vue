@@ -3,7 +3,7 @@
   <div
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    Page 01
+    About
   </div>
 </template>
 

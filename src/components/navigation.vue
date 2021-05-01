@@ -10,21 +10,21 @@
     >
       <router-link
         class="navigation__link"
-        to="/page-01"
+        to="/about"
       >
-        Page 01
+        About
       </router-link>
       <router-link
         class="navigation__link"
-        to="/page-02"
+        to="/items"
       >
-        Page 02
+        Items
       </router-link>
       <router-link
         class="navigation__link"
-        to="/page-03"
+        to="/contact"
       >
-        Page 03
+        Contact
       </router-link>
     </div>
   </nav>

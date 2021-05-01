@@ -1,7 +1,7 @@
 import Home from './components/pages/home.vue';
-import Page01 from './components/pages/page-01.vue';
-import Page02 from './components/pages/page-02.vue';
-import Page03 from './components/pages/page-03.vue';
+import About from './components/pages/about.vue';
+import Items from './components/pages/items.vue';
+import Contact from './components/pages/contact.vue';
 
 
 //basic routes
@@ -14,25 +14,25 @@ let routes = [
     meta: { pageTitle: 'Home' }
   },
   {
-    label: 'Page 01',
-    path: '/page-01',
-    name: 'page-01',
-    component: Page01,
-    meta: { pageTitle: 'Page01' }
+    label: 'About',
+    path: '/about',
+    name: 'about',
+    component: About,
+    meta: { pageTitle: 'About' }
   },
   {
-    label: 'Page 02',
-    path: '/page-02',
-    name: 'page-02',
-    component: Page02,
-    meta: { pageTitle: 'Page02' }
+    label: 'Items',
+    path: '/items',
+    name: 'items',
+    component: Items,
+    meta: { pageTitle: 'Items' }
   },
   {
-    label: 'Page 03',
-    path: '/page-03',
-    name: 'page-03',
-    component: Page03,
-    meta: { pageTitle: 'Page03' }
+    label: 'Contact',
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
+    meta: { pageTitle: 'Contact' }
   }
 ];
 
