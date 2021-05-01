@@ -41,5 +41,8 @@
     "url": "ssh://git@github.com:daviddarx/boilerplate-vuejs.git"
   },
   "author": "David Darx",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^2.0.3"
+  }
 }
