@@ -1,12 +1,7 @@
 
 <template>
   <div class="footer">
-    ©2021 Tina Beerli –
-    <router-link
-        to="/impressum"
-      >
-        Impressum
-    </router-link>
+    Footer
   </div>
 </template>
 

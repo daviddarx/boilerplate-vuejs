@@ -1,0 +1,7 @@
+{
+  "uuid": "item3",
+  "title": "Item 3",
+  "itemType": "Type 3",
+  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "image": "/images/uploads/test.png"
+}

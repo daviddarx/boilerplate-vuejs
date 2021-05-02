@@ -1,43 +1,61 @@
 import Home from './components/pages/home.vue';
-import Beratung from './components/pages/beratung.vue';
-import Uebermich from './components/pages/ueber-mich.vue';
-import Impressum from './components/pages/impressum.vue';
+import About from './components/pages/about.vue';
+import Items from './components/pages/items.vue';
+import ItemDetail from './components/pages/item-detail.vue';
+import Contact from './components/pages/contact.vue';
+
+import * as itemsList from '../content/items/items/*.json';
+delete itemsList.default;
 
 
 //basic routes
 let routes = [
   {
-    path: '/',
-    redirect: '/home'
-  },
-  {
     label: 'Home',
-    path: '/home',
+    path: '/',
     name: 'home',
     component: Home,
     meta: { pageTitle: 'Home' }
   },
   {
-    label: 'Beratung',
-    path: '/beratung',
-    name: 'beratung',
-    component: Beratung,
-    meta: { pageTitle: 'Beratung' }
+    label: 'About',
+    path: '/about',
+    name: 'about',
+    component: About,
+    meta: { pageTitle: 'About' }
   },
   {
-    label: 'Über mich',
-    path: '/ueber-mich',
-    name: 'ueber-mich',
-    component: Uebermich,
-    meta: { pageTitle: 'Über mich' }
+    label: 'Items',
+    path: '/items',
+    name: 'items',
+    component: Items,
+    meta: { pageTitle: 'Items' }
   },
   {
-    label: 'Impressum',
-    path: '/impressum',
-    name: 'impressum',
-    component: Impressum,
-    meta: { pageTitle: 'Impressum' }
+    label: 'Contact',
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
+    meta: { pageTitle: 'Contact' }
   }
 ];
+
+// //dynamically create routes for items
+Object.values(itemsList).forEach((item, i) => {
+  routes.push(
+    {
+      label: item.uuid,
+      path: '/items/'+item.uuid,
+      name: 'item-'+item.uuid,
+      component: ItemDetail,
+      meta: {
+        content:item,
+        id: i,
+        isNavHidden: true
+      }
+    }
+  );
+});
+
 
 export default routes;

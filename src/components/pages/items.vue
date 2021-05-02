@@ -1,30 +1,47 @@
 
 <template>
   <div
-    class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <h2>
-      {{home.title}}
+      {{items.title}}
     </h2>
 
     <div
-      v-html="getHTMLfromMD(home.content)"
+      v-html="getHTMLfromMD(items.content)"
     >
+    </div>
+
+    <div>
+      <div
+        v-for="item in list"
+        :key="item.title"
+        ref="item"
+      >
+        <router-link
+          v-bind:to="'/items/'+item.uuid"
+        >
+          {{item.title}}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
-  import * as home from '../../../content/home/home.json';
+  import * as items from '../../../content/items/items.json';
+  import * as itemsList from '../../../content/items/items/*.json';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
+
+  delete itemsList.default;
 
   export default Vue.extend({
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        home: home,
+        items: items,
+        list: Object.values(itemsList),
         isDisplayed : false,
       }
     },

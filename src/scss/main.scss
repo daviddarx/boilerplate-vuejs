@@ -1,16 +1,4 @@
-@import url("https://hello.myfonts.net/count/3cebad");
 @import 'reset-css/reset.css';
-
-@font-face {
-  font-family: 'Aestetico-Light';
-  src: url('../webfonts/aestetico_light.woff2') format('woff2'), url('../webfonts/aestetico_light.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Aestetico-Bold';
-  src: url('../webfonts/aestetico_bold.woff2') format('woff2'), url('../webfonts/aestetico_bold.woff') format('woff');
-}
-
 @import './assets.scss';
 
 * {
@@ -18,9 +6,25 @@
 }
 
 ::selection {
-  background: var(--c-text);
-  color: var(--c-bg);
+  background: rgba(0, 0, 0, 0.99);
+  color: white;
   text-shadow: none;
+}
+
+.is-selection-inverted {
+  *::selection {
+    background: rgba(255, 255, 255, 0.99);
+    color: black;
+    text-shadow: none;
+  }
+}
+
+.is-selection-normal {
+  *::selection {
+    background: rgba(0, 0, 0, 0.99);
+    color: white;
+    text-shadow: none;
+  }
 }
 
 html,
@@ -39,7 +43,6 @@ body {
   font-size: var(--s-text);
   line-height: var(--s-line-height);
   color: var(--c-text);
-  background-color: var(--c-bg);
   overflow-x: hidden;
 }
 
@@ -60,315 +63,24 @@ strong {
 a {
   color: var(--c-text);
   text-decoration: underline;
-  transition: opacity 0.25s ease-out;
-
-  @include hover () {
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-}
-
-li {
-  position: relative;
-  padding-left: 1em;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 0.2em;
-    height: 0.2em;
-    background-color: var(--c-text);
-    left: 0;
-    top: 0.6em;
-    border-radius: 50%;
-  }
 }
 
 .logo {
   position: fixed;
-  z-index: 20;
   top: var(--s-gutter);
   left: var(--s-gutter);
-  margin-top: -0.5em;
-
-  @include viewport('mobile-layout') {
-    position: relative;
-    top: auto;
-    left: auto;
-    padding-left: var(--s-gutter);
-    padding-right: var(--s-gutter);
-    margin-top: calc(var(--s-gutter) * 3);
-    margin-bottom: calc(var(--s-gutter) * 2);
-  }
-
-  .home & {
-    pointer-events: none;
-  }
-
-  .is-nav-absolute & {
-    position: absolute;
-  }
-
-  &__link {
-    text-decoration: none;
-  }
-
-  &__name {
-    @include fontTitle;
-
-    font-size: var(--s-text-logo);
-    display: inline-block;
-  }
-
-  &__subline {
-    font-size: var(--s-text-s);
-    display: inline-block;
-    width: 10em;
-    padding-left: 1em;
-
-    @include viewport('mobile-l') {
-      display: block;
-      padding-left: 0;
-    }
-  }
 }
 
 .navigation {
-  --d-mobile: 0.6s;
-  --d-mobile-link-out: 0.3s;
-  --d-mobile-link-in: 0.75s;
-  $delay: 0.1;
-
-  &__container {
-    position: fixed;
-    z-index: 20;
-    top: var(--s-margin-top-content);
-    left: var(--s-gutter);
-
-    .is-mobile & {
-      top: 0;
-      right: 0;
-      left: auto;
-      width: 80vw;
-      height: 100vh;
-      box-sizing: border-box;
-      padding: var(--s-gutter);
-      background-color: var(--c-text);
-      max-width: 300px;
-      transform: translateX(100%);
-      transition: transform var(--e-inout) var(--d-mobile);
-    }
-
-    .is-mobile-displayed & {
-      transform: translateX(0);
-      transition-timing-function: var(--e-out);
-    }
-
-    .is-nav-absolute & {
-      position: absolute;
-    }
-  }
+  position: fixed;
+  top: 50vh;
+  left: var(--s-gutter);
 
   &__link {
-    @include fontTitle;
-
     display: block;
-    font-weight: bold;
-    text-decoration: none;
 
-    .is-mobile & {
-      color: var(--c-bg);
-      opacity: 0;
-      transform: translateY(calc(var(--s-gutter) * 2));
-      transition: opacity linear var(--d-mobile-link-out), transform var(--e-out) var(--d-mobile-link-out) var(--d-mobile-link-out);
-    }
-
-    .is-mobile-displayed & {
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}n) {
-          transition-delay: #{$i * $delay}s;
-        }
-      }
-
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity linear var(--d-mobile-link-in), transform var(--e-out) var(--d-mobile-link-in);
-    }
-  }
-
-  &__el {
-    position: relative;
-
-    &::before {
-      --s-bullet: 0.35em;
-
-      content: "";
-      position: absolute;
-      display: block;
-      width: var(--s-bullet);
-      height: var(--s-bullet);
-      top: 0.45em;
-      left: -1.05em;
-      background-color: var(--c-text);
-      border-radius: 100%;
-      transform: scale(0);
-      transition: transform ease-in-out 0.25s;
-
-      .is-mobile & {
-        width: calc(var(--s-gutter) * 0.5);
-        height: 2px;
-        left: calc(var(--s-gutter) * -1);
-        top: 0.6em;
-        border-radius: 0;
-        background-color: var(--c-bg);
-      }
-    }
-
-    .is-current & {
-      &::before {
-        transform: scale(1);
-      }
-    }
-  }
-
-  &__contact {
-    display: none;
-    font-size: var(--s-text-s);
-    color: var(--c-bg);
-    padding-top: var(--s-gutter);
-
-    a {
-      color: var(--c-bg);
-    }
-
-    .is-mobile & {
-      display: block;
-      opacity: 0;
-      transform: translateY(calc(var(--s-gutter) * 2));
-      transition: opacity linear var(--d-mobile-link-out), transform var(--e-out) var(--d-mobile-link-out) var(--d-mobile-link-out);
-    }
-
-    .is-mobile-displayed & {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity linear var(--d-mobile-link-in), transform var(--e-out) var(--d-mobile-link-in);
-      transition-delay: $delay * 10s;
-    }
-  }
-
-  &__burger {
-    --s-dim: var(--s-gutter);
-    --s-margin: var(--s-gutter);
-    --h-line: 2px;
-    --t-line: 10px;
-    --c-line: var(--c-text);
-
-    .is-mobile-displayed & {
-      --c-line: var(--c-bg);
-    }
-
-    @include viewport('mobile-l') {
-      --s-dim: calc(var(--s-gutter) * 1.5);
-    }
-
-    cursor: pointer;
-    display: none;
-    position: fixed;
-    z-index: 30;
-    width: var(--s-dim);
-    height: calc(var(--h-line) + var(--t-line) * 2);
-    top: var(--s-margin);
-    right: var(--s-margin);
-    background-color: transparent;
-
-    .is-mobile & {
-      display: block;
-    }
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: var(--h-line);
-      top: 50%;
-      transform: translateY(calc(var(--t-line) * -1));
-      background-color: var(--c-line);
-      transition: all var(--e-out) 0.2s;
-    }
-
-    &::before {
-      .is-mobile-displayed & {
-        transform: translateY(0) rotate(-45deg);
-      }
-    }
-
-    &::after {
-      transform: translateY(calc(var(--t-line) - 2px));
-
-      .is-mobile-displayed & {
-        transform: translateY(0) rotate(45deg);
-      }
-    }
-
-    &-line {
-      position: absolute;
-      width: 100%;
-      height: var(--h-line);
-      background-color: var(--c-line);
-      top: 50%;
-      margin-top: -1px;
-      transition: transform var(--e-out) 0.2s;
-
-      .is-mobile-displayed & {
-        transform: scaleX(0);
-      }
-    }
-
-    &-bg {
-      --s-margin: -30%;
-
-      position: absolute;
-      top: calc(var(--s-margin) - 1px);
-      right: var(--s-margin);
-      bottom: var(--s-margin);
-      left: var(--s-margin);
-      background-color: var(--c-bg);
-      z-index: -1;
-      transition: visibility linear 0s var(--d-mobile);
-
-      .is-mobile-displayed & {
-        visibility: hidden;
-        transition-delay: 0s;
-      }
-    }
-  }
-
-  &__bg {
-    --d: 0.35s;
-
-    position: fixed;
-    display: none;
-    cursor: pointer;
-    z-index: 19;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    bottom: 0;
-    background-color: var(--c-bg);
-    visibility: hidden;
-    transition: opacity linear var(--d), visibility linear var(--d) var(--d);
-    opacity: 0;
-
-    .is-mobile & {
-      display: block;
-    }
-
-    .is-mobile-displayed & {
-      visibility: visible;
-      transition-delay: 0s, 0s;
-      opacity: 0.75;
+    &.is-current {
+      background-color: turquoise;
     }
   }
 }
@@ -378,252 +90,47 @@ li {
   width: 50vw;
   left: 50vw;
   padding: var(--s-gutter);
-  padding-left: 0;
-  padding-top: var(--s-margin-top-content);
   box-sizing: border-box;
-
-  @include viewport('mobile-layout') {
-    width: 100%;
-    padding: var(--s-gutter);
-    left: auto;
-    padding-top: calc(var(--s-gutter) * 8);
-  }
-
-  &__container {
-    transform: translateY(var(--s-page-transition-y));
-    transition: transform var(--e-out) var(--d-page-transition-y);
-
-    .is-displayed & {
-      transform: translateY(0);
-    }
-  }
-
-  &__portrait {
-    display: none;
-
-    @include viewport('mobile-layout') {
-      display: block;
-      width: 30vw;
-      margin-bottom: var(--s-gutter);
-    }
-
-    @include viewport('mobile-l') {
-      width: 100%;
-    }
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: var(--s-margin-top-h);
-    margin-bottom: var(--s-margin-bottom-p);
-
-    &.no-margin-top {
-      margin-top: 0;
-    }
-  }
-
-  p {
-    margin-bottom: var(--s-margin-bottom-p);
-
-    @include viewport('mobile-l') {
-      @include hyphens();
-    }
-  }
-
-  ul,
-  dl {
-    margin-bottom: var(--s-margin-bottom-p);
-  }
-
-  dl {
-    display: flex;
-    flex-wrap: wrap;
-
-    @include viewport('mobile-l') {
-      display: block;
-    }
-  }
-
-  dt {
-    flex-basis: 60%;
-  }
-
-  dd {
-    flex-basis: 40%;
-
-    @include viewport('mobile-l') {
-      margin-bottom: 0.5em;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-}
-
-.portrait {
-  --s-t-left: calc(var(--s-gutter) * -1);
-
-  position: fixed;
-  z-index: -1;
-  height: calc(50vh - var(--s-gutter));
-  right: 50%;
-  bottom: var(--s-gutter);
-  opacity: 0;
-  transform: translate(var(--s-t-left), calc(var(--s-page-transition-y) + 100%));
-  transition: transform var(--e-out) calc(var(--d-page-transition-y) * 1.2), opacity ease-out 0.2s;
-
-  &.is-loaded {
-    opacity: 1;
-  }
-
-  &.is-displayed {
-    transform: translate(var(--s-t-left), 0);
-  }
-
-  @include viewport('mobile-layout') {
-    display: none;
-  }
-}
-
-.contact {
-  position: fixed;
-  z-index: 20;
-  font-size: var(--s-text-s);
-  bottom: var(--s-gutter);
-  left: var(--s-gutter);
-
-  .is-nav-absolute & {
-    position: absolute;
-    bottom: auto;
-    top: 90vh;
-  }
-
-  @include viewport('mobile-layout') {
-    display: none;
-  }
-
-  &--mobile {
-    position: relative;
-    left: auto;
-    display: none;
-    margin-top: calc(var(--s-gutter) * 4);
-
-    @include viewport('mobile-layout') {
-      display: block;
-    }
-
-    @media (min-aspect-ratio: 11/5) {
-      display: block;
-    }
-  }
-
-  &__address {
-    @media (min-aspect-ratio: 11/5) {
-      display: none;
-
-      .contact--mobile & {
-        display: block;
-      }
-    }
-  }
-}
-
-.footer {
-  font-size: var(--s-text-s);
-  margin-top: calc(var(--s-gutter) * 2);
-
-  @include viewport('mobile-layout') {
-    margin-top: calc(var(--s-gutter) * 2);
-  }
-}
-
-.background-decoration {
-  position: fixed;
-  z-index: -2;
-  top: 2vh;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: opacity var(--e-inout) 1s;
-
-  @include viewport('mobile-layout') {
-    top: 12vh;
-  }
-
-  @include viewport('mobile-l') {
-    top: 40vw;
-  }
-
-  @include viewport('mobile') {
-    top: 55vw;
-  }
-
-  @include viewport('mobile-s') {
-    top: 65vw;
-  }
-
-  &.is-faded {
-    opacity: 0.2;
-  }
-
-  &__img {
-    position: absolute;
-    width: 100vw;
-    opacity: 0;
-    transition: opacity linear 0.5s;
-
-    @include viewport('mobile-layout') {
-      width: 200vw;
-      margin-left: -100vw;
-    }
-
-    &.is-loaded {
-      opacity: 1;
-    }
-
-    &.is-hidden {
-      visibility: hidden;
-    }
-  }
 }
 
 .transition {
   &__bg--in,
   &__bg--out {
     position: fixed;
-    z-index: 10;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--c-bg);
+    background-color: violet;
+    will-change: transform;
+  }
+
+  &__bg--out {
+    background-color: orange;
   }
 }
 
 .transition-in-enter-active {
-  transition: opacity ease-in 0.35s;
+  transition: transform var(--e-inout) 0.5s;
+  transform-origin: top left;
 }
 
 .transition-in-enter,
 .transition-in-leave-to {
-  opacity: 0;
+  transform: scaleX(0);
 }
 
 .transition-out-enter-active {
-  opacity: 0;
-  transition: opacity ease-out 0.35s;
-  transition-delay: 0.2s;
+  transform: scaleX(0);
+  transition: transform var(--e-inout) 0.5s;
+  transform-origin: top right;
 }
 
 .transition-out-leave-active {
-  opacity: 0;
+  transform: scaleX(0);
 }
 
 .transition-out-enter {
-  opacity: 1;
+  transform: scaleX(1);
 }

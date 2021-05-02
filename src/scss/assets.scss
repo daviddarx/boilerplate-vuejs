@@ -1,10 +1,11 @@
 //fonts
 @mixin fontRunText() {
-  font-family: Aestetico-Light, Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @mixin fontTitle() {
-  font-family: Aestetico-Bold, Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 // utilities
@@ -14,7 +15,7 @@ $breakpoints: (
   'desktop': 'max-width: 1280px',
   'tablet': 'max-width: 1024px',
   'tablet-s': 'max-width: 768px',
-  'mobile-layout': 'max-width: 850px',
+  'mobile-layout': 'max-width: 768px',
   'mobile-l': 'max-width: 560px',
   'mobile': 'max-width: 414px',
   'mobile-s': 'max-width: 320px',
@@ -75,37 +76,19 @@ $breakpoints: (
 // styles
 :root {
   //colors
-  --c-text: hsl(207, 100%, 28%);
-  --c-bg: #ccf0d8; // original without decoration jpg compression: hsl(144, 63%, 86%);
+  --c-text: black;
 
   //sizes
-  --s-gutter: 4vw;
   --s-text: 2rem;
-  --s-text-s: calc(var(--s-text) * 0.6);
-  --s-text-logo: calc(var(--s-text) * 1.8);
-  --s-line-height: 1.5;
-  --s-margin-top-content: calc(50vh - 0.27em);
-  --s-margin-bottom-p: calc(var(--s-text) * 1.5);
-  --s-margin-top-h: calc(var(--s-text) * 2.5);
-  --s-page-transition-y: 40vh;
-
-  //durations
-  --d-page-transition-y: 0.75s;
+  --s-line-height: 1.25;
+  --s-gutter: 2vw;
 
   //eases https://matthewlein.com/tools/ceaser
   --e-in: cubic-bezier(0.895, 0.03, 0.685, 0.22); // quart
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1); // quart
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1); // quart
 
-  @include viewport('tablet-s') {
+  @include viewport('desktop-xl') {
     --s-text: 3rem;
-  }
-
-  @include viewport('mobile-l') {
-    --s-text: 7.5rem;
-  }
-
-  @include viewport('mobile') {
-    --s-gutter: 6vw;
   }
 }
