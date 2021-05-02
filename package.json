@@ -1,7 +1,7 @@
 {
-  "name": "tina-beerli-website",
+  "name": "boilerplate-vuejs",
   "version": "1.0.0",
-  "description": "Tina Beerli Website",
+  "description": "Boilerplate for vuejs websites",
   "main": ".src/index.js",
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:daviddarx/tinabeerli.git"
+    "url": "git@github.com:daviddarx/boilerplate-vuejs.git"
   },
   "author": "David Darx",
   "license": "ISC"
