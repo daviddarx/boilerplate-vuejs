@@ -124,25 +124,6 @@ collections:
         name: "title"
         widget: "string"
 
-      - label: "Description"
-        name: "desc"
-        widget: "markdown"
-        buttons:
-          - bold
-          - italic
-          - link
-          - bulleted-list
-          - numbered-list
-
-      - label: "Images"
-          name: "images"
-          widget: "list"
-          required: false
-          fields:
-            - label: "Image"
-              name: "image"
-              widget: "image
-
   - name: "contact"
     label: "Contact"
     create: false
