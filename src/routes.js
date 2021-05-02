@@ -41,8 +41,7 @@ let routes = [
 ];
 
 // //dynamically create routes for items
-var test = Object.values(itemsList);
-Object.values(itemsList).forEach(item => {
+Object.values(itemsList).forEach((item, i) => {
   routes.push(
     {
       label: item.uuid,
