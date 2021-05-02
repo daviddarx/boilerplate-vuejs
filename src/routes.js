@@ -48,7 +48,11 @@ Object.values(itemsList).forEach((item, i) => {
       path: '/items/'+item.uuid,
       name: 'item-'+item.uuid,
       component: ItemDetail,
-      meta: { content:item, isNavHidden: true }
+      meta: {
+        content:item,
+        id: i,
+        isNavHidden: true
+      }
     }
   );
 });
