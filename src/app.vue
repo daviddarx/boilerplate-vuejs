@@ -76,6 +76,8 @@
       this.isAndroid = browserDetect.isAndroid;
 
       this.checkIfUserTouch();
+
+      console.log("app mountend");
     },
     methods: {
       checkIfUserTouch: function () {
