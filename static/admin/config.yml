@@ -106,6 +106,43 @@ collections:
           - heading-three
           - bulleted-list
 
+  - name: "item"
+    label: "Item"
+    folder: "content/items/items/"
+    create: true
+    slug: "{{uuid}}"
+    description: "Create pages for items."
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "uuid"
+        name: "uuid"
+        widget: "string"
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Description"
+        name: "desc"
+        widget: "markdown"
+        buttons:
+          - bold
+          - italic
+          - link
+          - bulleted-list
+          - numbered-list
+
+    - label: "Images"
+        name: "images"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image
+
   - name: "contact"
     label: "Contact"
     create: false
