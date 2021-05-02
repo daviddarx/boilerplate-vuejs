@@ -83,6 +83,29 @@ collections:
                     - bold
                     - link
 
+  - name: "items"
+    label: "Items"
+    create: false
+    delete: false
+    folder: "content/items/"
+    slug: "items"
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+
   - name: "contact"
     label: "Contact"
     create: false
