@@ -44,6 +44,8 @@ body {
   line-height: var(--s-line-height);
   color: var(--c-text);
   overflow-x: hidden;
+  padding: 5vw;
+  box-sizing: border-box;
 }
 
 h1,
@@ -66,71 +68,66 @@ a {
 }
 
 .logo {
-  position: fixed;
-  top: var(--s-gutter);
-  left: var(--s-gutter);
+  font-weight: bold;
 }
 
 .navigation {
-  position: fixed;
-  top: 50vh;
-  left: var(--s-gutter);
+  position: relative;
+  margin-top: var(--s-gutter);
 
   &__link {
-    display: block;
+    display: table;
 
     &.is-current {
-      background-color: turquoise;
+      background-color: black;
+      color: white;
     }
   }
 }
 
 .content {
   position: relative;
-  width: 50vw;
-  left: 50vw;
-  padding: var(--s-gutter);
+  margin-top: calc(var(--s-gutter) * 2);
   box-sizing: border-box;
 }
 
 .transition {
-  &__bg--in,
-  &__bg--out {
+  &__bg {
     position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: violet;
+    background-color: rgba(0, 0, 0, 1);
     will-change: transform;
-  }
-
-  &__bg--out {
-    background-color: orange;
   }
 }
 
-.transition-in-enter-active {
-  transition: transform var(--e-inout) 0.5s;
+.transition-enter-active {
+  transition: transform var(--e-inout) 0.5s, background-color linear 0.5s;
   transform-origin: top left;
 }
 
-.transition-in-enter,
-.transition-in-leave-to {
-  transform: scaleX(0);
-}
-
-.transition-out-enter-active {
-  transform: scaleX(0);
-  transition: transform var(--e-inout) 0.5s;
+.transition-leave-active {
+  transition: transform var(--e-inout) 0.5s, background-color linear 0.5s;
   transform-origin: top right;
 }
 
-.transition-out-leave-active {
+.transition-enter {
   transform: scaleX(0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.transition-out-enter {
+.transition-enter-to {
   transform: scaleX(1);
+}
+
+.transition-leave {
+  transform: scaleX(1);
+}
+
+.transition-leave-to {
+  transform: scaleX(0);
+  background-color: rgba(0, 0, 0, 0);
 }
