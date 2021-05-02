@@ -1,7 +1,6 @@
 {
   "uuid": "item2",
   "title": "Item 2",
-  "itemType": "Type 2",
   "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "image": "/images/uploads/test.png"
 }
