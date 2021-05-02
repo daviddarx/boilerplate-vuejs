@@ -72,11 +72,6 @@
     },
     mounted () {
       setTimeout(this.display, 100);
-
-      console.log(this.id);
-      console.log(this.itemsList);
-      console.log(this.linkNext);
-      console.log(this.linkPrev);
     },
 
     methods: {
