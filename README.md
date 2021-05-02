@@ -1,3 +1,3 @@
-# Tina Beerli Website
+# boilerplate vue-js
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7378e4a5-14ca-49dc-b21d-38982dd97458/deploy-status)](https://app.netlify.com/sites/tina-beerli/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dcb496b8-eb26-4e0a-8854-8fd02b5b724a/deploy-status)](https://app.netlify.com/sites/boilerplate-vuejs/deploys)
