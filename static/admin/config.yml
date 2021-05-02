@@ -110,7 +110,7 @@ collections:
     label: "Item"
     folder: "content/items/items/"
     create: true
-    slug: "{{slug}}"
+    slug: "{{uuid}}"
     description: "Create pages for items."
     extension: "json"
     format: "json"
