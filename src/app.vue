@@ -4,14 +4,17 @@
     class="website-container"
     v-bind:class="{
       'is-ios': this.isiOS,
-      'is-android': this.isAndroid
+      'is-android': this.isAndroid,
+      'is-nav-absolute': this.isNavAbsolute
     }"
   >
-    <h1 class="visually-hidden">Boilerplate Vue.js</h1>
+    <h1 class="visually-hidden">Tina Beerli – Psychologische Beratung &amp; Coaching</h1>
 
     <logo></logo>
 
     <custom-navigation ref="nav"></custom-navigation>
+
+    <portrait></portrait>
 
     <div class="content">
       <router-view
@@ -20,13 +23,14 @@
       >
       </router-view>
 
+      <custom-contact class="contact--mobile"></custom-contact>
+
       <custom-footer></custom-footer>
     </div>
 
+    <custom-contact></custom-contact>
 
     <custom-transition></custom-transition>
-
-    <browser-warning></browser-warning>
   </div>
 </template>
 
@@ -35,8 +39,9 @@
   import Logo from './components/logo.vue';
   import CustomNavigation from './components/navigation.vue';
   import CustomFooter from './components/footer.vue';
+  import CustomContact from './components/contact.vue';
   import CustomTransition from './components/transition.vue';
-  import BrowserWarning from './components/browser-warning.vue';
+  import Portrait from './components/portrait.vue';
   import browserDetect from './browser-detect';
 
 
@@ -45,8 +50,9 @@
       'logo': Logo,
       'custom-navigation': CustomNavigation,
       'custom-footer': CustomFooter,
+      'custom-contact': CustomContact,
       'custom-transition': CustomTransition,
-      'browser-warning': BrowserWarning,
+      'portrait': Portrait,
     },
     data() {
       return {
@@ -54,7 +60,8 @@
         isAndroid: false,
         splashScreen: undefined,
         isLoaded: false,
-        displayAfterLoadedDelay: 500
+        isNavAbsolute: false,
+        displayAfterLoadedDelay: 500,
       }
     },
     computed: {
@@ -77,7 +84,8 @@
 
       this.checkIfUserTouch();
 
-      console.log("app mountend");
+      window.addEventListener('resize', this.resizeListener);
+      this.resizeListener();
     },
     methods: {
       checkIfUserTouch: function () {
@@ -89,6 +97,16 @@
         document.body.classList.add('is-touch');
         window.removeEventListener('touchstart', this.touchListener);
       },
+      resizeListener: function () {
+        const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const height = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+        const screenRatio = width/height;
+        if (screenRatio > 2.6 && width > this.$refs.nav.isMobileStep) {
+          this.isNavAbsolute = true;
+        } else {
+          this.isNavAbsolute = false;
+        }
+      }
     }
   });
 </script>

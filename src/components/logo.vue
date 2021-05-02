@@ -3,11 +3,19 @@
   <div
     class="logo"
   >
-    <div class="logo__container">
+    <div
+      class="logo__container"
+    >
       <router-link
+        class="logo__link"
         to="/"
       >
-        LOGO
+        <p class="logo__name">
+          Tina Beerli
+        </p>
+        <p class="logo__subline">
+          Psychologische Beratung &amp; Coaching
+        </p>
       </router-link>
     </div>
   </div>

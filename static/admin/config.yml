@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: daviddarx/boilerplate-vuejs
+  repo: daviddarx/tinabeerli
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
@@ -29,12 +29,12 @@ collections:
           - heading-three
           - bulleted-list
 
-  - name: "about"
-    label: "About"
+  - name: "beratung"
+    label: "Beratung"
     create: false
     delete: false
-    folder: "content/about/"
-    slug: "about"
+    folder: "content/beratung/"
+    slug: "beratung"
     extension: "json"
     format: "json"
     summary: "Version: {{version}} - {{title}}"
@@ -83,12 +83,12 @@ collections:
                     - bold
                     - link
 
-  - name: "contact"
-    label: "Contact"
+  - name: "uebermich"
+    label: "Über mich"
     create: false
     delete: false
-    folder: "content/contact/"
-    slug: "contact"
+    folder: "content/uebermich/"
+    slug: "uebermich"
     extension: "json"
     format: "json"
     summary: "Version: {{version}} - {{title}}"

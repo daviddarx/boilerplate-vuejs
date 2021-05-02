@@ -1,24 +1,31 @@
 
 <template>
   <div
-    class="home"
+    class="about"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="content__container">
       <h2 class="visually-hidden">
-        {{home.title}}
+        {{aboutme.title}}
       </h2>
+
+      <img
+        src="../../../static/images/tina_beerli.jpg"
+        alt="Tina Beerli – Tina Beerli – Psychologische Beratung und Coaching"
+        class="content__portrait"
+        ref="image"
+      />
 
       <div
         class="content__md"
-        v-html="getHTMLfromMD(home.content)"
+        v-html="getHTMLfromMD(aboutme.content)"
       >
       </div>
     </div>
     <background-decoration
       ref="bgDeco"
-      v-bind:image1URL="'/images/faden/faden_01_1.jpg'"
-      v-bind:image2URL="'/images/faden/faden_01_2.jpg'"
+      v-bind:image1URL="'/images/faden/faden_03_1.jpg'"
+      v-bind:image2URL="'/images/faden/faden_03_2.jpg'"
     >
     </background-decoration>
   </div>
@@ -26,7 +33,7 @@
 
 <script>
   import Vue from "vue";
-  import * as home from '../../../content/home/home.json';
+  import * as aboutme from '../../../content/uebermich/uebermich.json';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
   import BackgroundDecoration from '../background-decoration.vue';
 
@@ -37,16 +44,14 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        home: home,
+        aboutme: aboutme,
         isDisplayed : false,
       }
     },
     mounted () {
       setTimeout(this.display, 100);
-      document.body.classList.add('home');
     },
     beforeDestroy () {
-      document.body.classList.remove('home');
       this.$refs.bgDeco.destroy();
     },
     methods: {
