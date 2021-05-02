@@ -22,6 +22,7 @@
       >
         {{this.linkPrev.title}}
       </router-link>
+      &nbsp;
       <router-link
         v-bind:to="this.linkNext.path"
       >
