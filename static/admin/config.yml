@@ -124,6 +124,15 @@ collections:
         name: "title"
         widget: "string"
 
+      - label: "Desc"
+        name: "desc"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+
   - name: "contact"
     label: "Contact"
     create: false
