@@ -23,7 +23,6 @@
       <custom-footer></custom-footer>
     </div>
 
-
     <custom-transition></custom-transition>
 
     <browser-warning></browser-warning>
