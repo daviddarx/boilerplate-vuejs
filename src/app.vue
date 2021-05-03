@@ -14,13 +14,16 @@
     <custom-navigation ref="nav"></custom-navigation>
 
     <div class="content">
-      <router-view
-        :key="$route.fullPath"
-        ref="view"
+      <transition
+        name="content"
       >
-      </router-view>
+        <router-view
+          :key="$route.fullPath"
+          ref="view"
+        >
+        </router-view>
+      </transition>
 
-      <custom-footer></custom-footer>
     </div>
 
     <custom-transition></custom-transition>
@@ -33,7 +36,6 @@
   import Vue from "vue";
   import Logo from './components/logo.vue';
   import CustomNavigation from './components/navigation.vue';
-  import CustomFooter from './components/footer.vue';
   import CustomTransition from './components/transition.vue';
   import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
@@ -43,7 +45,6 @@
     components: {
       'logo': Logo,
       'custom-navigation': CustomNavigation,
-      'custom-footer': CustomFooter,
       'custom-transition': CustomTransition,
       'browser-warning': BrowserWarning,
     },

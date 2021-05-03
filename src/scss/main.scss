@@ -76,7 +76,7 @@ a {
   margin-top: var(--s-gutter);
 
   &__link {
-    display: table;
+    margin-right: 1em;
 
     &.is-current {
       background-color: black;
@@ -89,6 +89,24 @@ a {
   position: relative;
   margin-top: calc(var(--s-gutter) * 2);
   box-sizing: border-box;
+}
+
+.content-enter-active {
+  transition: transform var(--e-inout) 0.5s, opacity linear 0.5s;
+}
+
+.content-enter {
+  transform: translateX(-4em);
+  opacity: 0;
+}
+
+.content-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.footer {
+  margin-top: 2em;
 }
 
 .transition {

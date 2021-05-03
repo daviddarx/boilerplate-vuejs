@@ -20,26 +20,32 @@
       <router-link
         v-bind:to="this.linkPrev.path"
       >
-        {{this.linkPrev.title}}
+        &#8592; {{this.linkPrev.title}}
       </router-link>
       &nbsp;
       <router-link
         v-bind:to="this.linkNext.path"
       >
-        {{this.linkNext.title}}
+        {{this.linkNext.title}} &#8594;
       </router-link>
     </div>
+
+    <custom-footer></custom-footer>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import CustomFooter from '../footer.vue';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
   import * as itemsList from '../../../content/items/items/*.json';
 
   delete itemsList.default;
 
   export default Vue.extend({
+    components: {
+      'custom-footer': CustomFooter,
+    },
     mixins: [getHTMLfromMDMixin],
     computed: {
       content: function () {

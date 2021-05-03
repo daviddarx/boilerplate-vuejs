@@ -12,15 +12,21 @@
       v-html="getHTMLfromMD(home.content)"
     >
     </div>
+
+    <custom-footer></custom-footer>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import CustomFooter from '../footer.vue';
   import * as home from '../../../content/home/home.json';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
 
   export default Vue.extend({
+    components: {
+      'custom-footer': CustomFooter,
+    },
     mixins: [getHTMLfromMDMixin],
     data() {
       return {

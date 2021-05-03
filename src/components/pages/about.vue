@@ -38,15 +38,21 @@
           </template>
         </dl>
       </div>
+
+      <custom-footer></custom-footer>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import CustomFooter from '../footer.vue';
   import * as about from '../../../content/about/about.json';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
 
   export default Vue.extend({
+    components: {
+      'custom-footer': CustomFooter,
+    },
     mixins: [getHTMLfromMDMixin],
     data() {
       return {

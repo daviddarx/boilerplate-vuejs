@@ -25,11 +25,14 @@
         </router-link>
       </div>
     </div>
+
+    <custom-footer></custom-footer>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import CustomFooter from '../footer.vue';
   import * as items from '../../../content/items/items.json';
   import * as itemsList from '../../../content/items/items/*.json';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
@@ -37,6 +40,9 @@
   delete itemsList.default;
 
   export default Vue.extend({
+    components: {
+      'custom-footer': CustomFooter,
+    },
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
