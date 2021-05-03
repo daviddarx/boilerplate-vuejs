@@ -133,6 +133,10 @@ collections:
           - heading-three
           - bulleted-list
 
+      - label: "Image"
+        name: "image"
+        widget: "image"
+
   - name: "contact"
     label: "Contact"
     create: false
