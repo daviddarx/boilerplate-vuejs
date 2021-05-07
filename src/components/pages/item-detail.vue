@@ -18,6 +18,8 @@
     <img
       :src = content.image
       :alt = content.title
+      class = "img-to-load"
+      @load="imgLoaded"
     >
 
     <div>
@@ -32,6 +34,8 @@
           <img
             :src = item.image
             :alt = content.title
+            class = "img-to-load"
+            @load="imgLoaded"
           >
         </div>
       </div>
@@ -61,13 +65,16 @@
   import CustomFooter from '../footer.vue';
   import contents from '../../contents';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
-
+  import imgToLoad from '../../mixins/imgToLoad';
 
   export default Vue.extend({
     components: {
       'custom-footer': CustomFooter,
     },
-    mixins: [getHTMLfromMDMixin],
+    mixins: [
+      getHTMLfromMDMixin,
+      imgToLoad
+    ],
     computed: {
       content: function () {
         return this.$route.meta.content;
