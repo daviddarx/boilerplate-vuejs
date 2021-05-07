@@ -39,7 +39,7 @@
     },
 
     methods: {
-      display: function() {
+      display: function () {
         if (this.$parent.isLoaded == true) {
           this.isDisplayed = true;
         }
