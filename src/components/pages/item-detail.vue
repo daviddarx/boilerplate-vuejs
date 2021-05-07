@@ -37,10 +37,9 @@
 <script>
   import Vue from "vue";
   import CustomFooter from '../footer.vue';
+  import contents from '../../contents';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
-  import * as itemsList from '../../../content/items/items/*.json';
 
-  delete itemsList.default;
 
   export default Vue.extend({
     components: {
@@ -73,7 +72,7 @@
     },
     data() {
       return {
-        itemsList: Object.values(itemsList),
+        itemsList: contents.itemsList,
         isDisplayed : false,
       }
     },
