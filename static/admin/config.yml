@@ -120,6 +120,11 @@ collections:
         name: "uuid"
         widget: "string"
 
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        default: ""
+
       - label: "Title"
         name: "title"
         widget: "string"
