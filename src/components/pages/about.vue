@@ -46,7 +46,7 @@
 <script>
   import Vue from "vue";
   import CustomFooter from '../footer.vue';
-  import * as about from '../../../content/about/about.json';
+  import contents from '../../contents';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
 
   export default Vue.extend({
@@ -56,7 +56,7 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        about: about,
+        about: contents.about,
         isDisplayed : false,
       }
     },

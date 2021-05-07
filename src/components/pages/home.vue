@@ -20,7 +20,7 @@
 <script>
   import Vue from "vue";
   import CustomFooter from '../footer.vue';
-  import * as home from '../../../content/home/home.json';
+  import contents from '../../contents';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
 
   export default Vue.extend({
@@ -30,7 +30,7 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        home: home,
+        home: contents.home,
         isDisplayed : false,
       }
     },
