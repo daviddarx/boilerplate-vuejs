@@ -142,6 +142,15 @@ collections:
         name: "image"
         widget: "image"
 
+      - label: "Additional Images"
+        name: "additionalImages"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+
   - name: "contact"
     label: "Contact"
     create: false
