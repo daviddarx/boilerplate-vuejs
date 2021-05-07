@@ -4,9 +4,7 @@ import Items from './components/pages/items.vue';
 import ItemDetail from './components/pages/item-detail.vue';
 import Contact from './components/pages/contact.vue';
 
-import * as itemsList from '../content/items/items/*.json';
-delete itemsList.default;
-
+import contents from './contents';
 
 //basic routes
 let routes = [
@@ -41,7 +39,7 @@ let routes = [
 ];
 
 // //dynamically create routes for items
-Object.values(itemsList).forEach((item, i) => {
+contents.itemsList.forEach((item, i) => {
   routes.push(
     {
       label: item.uuid,
