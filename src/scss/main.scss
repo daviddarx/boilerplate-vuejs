@@ -105,6 +105,15 @@ a {
   opacity: 1;
 }
 
+.image-to-load {
+  opacity: 0;
+  transition: opacity linear 0.3s;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
 .footer {
   margin-top: 2em;
 }
