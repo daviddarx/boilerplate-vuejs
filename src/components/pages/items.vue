@@ -33,11 +33,8 @@
 <script>
   import Vue from "vue";
   import CustomFooter from '../footer.vue';
-  import * as items from '../../../content/items/items.json';
-  import * as itemsList from '../../../content/items/items/*.json';
+  import contents from '../../contents';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
-
-  delete itemsList.default;
 
   export default Vue.extend({
     components: {
@@ -46,8 +43,8 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        items: items,
-        list: Object.values(itemsList),
+        items: contents.items,
+        list: contents.itemsList,
         isDisplayed : false,
       }
     },
