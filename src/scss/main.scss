@@ -105,9 +105,9 @@ a {
   opacity: 1;
 }
 
-.image-to-load {
+.img-to-load {
   opacity: 0;
-  transition: opacity linear 0.3s;
+  transition: opacity linear 2s;
 
   &.loaded {
     opacity: 1;
