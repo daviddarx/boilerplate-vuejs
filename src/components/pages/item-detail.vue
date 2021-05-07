@@ -6,16 +6,38 @@
     <h2>
       {{content.title}}
     </h2>
+
     <p>
       {{content.itemType}}
     </p>
+
     <p>
       {{content.desc}}
     </p>
+
     <img
       :src = content.image
       :alt = content.title
     >
+
+    <div>
+      <div
+        v-if="content.additionalImages"
+      >
+        <div
+          v-for="(item, i) in content.additionalImages"
+          :key="item.image+i"
+          ref="image"
+        >
+          <img
+            :src = item.image
+            :alt = content.title
+          >
+        </div>
+      </div>
+    </div>
+
+
     <div>
       <router-link
         v-bind:to="this.linkPrev.path"
